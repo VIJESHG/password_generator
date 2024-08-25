@@ -14,6 +14,8 @@ class PasswordGeneratorError(Exception):
     pass
 
 def generate_password(length=12, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True):
+     
+
     if not isinstance(length, int) or length <= 0:
         raise PasswordGeneratorError("Password length must be a positive integer.")
     
@@ -53,4 +55,4 @@ def generate_password(length=12, use_uppercase=True, use_lowercase=True, use_dig
 
     return ''.join(password)
 
-print(generate_password(2))
+print(generate_password(10))
