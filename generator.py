@@ -14,7 +14,35 @@ class PasswordGeneratorError(Exception):
     pass
 
 def generate_password(length=12, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True):
-     
+    """
+    Generate a random password with specified rules.
+
+    Parameters:
+    length (int): Length of the password (default is 12). Must be a positive integer.
+    use_uppercase (bool): Include uppercase letters (default is True).
+    use_lowercase (bool): Include lowercase letters (default is True).
+    use_digits (bool): Include digits (default is True).
+    use_special (bool): Include special characters (default is True).
+
+    Returns:
+    str: The generated password.
+
+    Raises:
+    PasswordGeneratorError: If the length is not a positive integer.
+    PasswordGeneratorError: If no character sets are selected.
+    PasswordGeneratorError: If the length is too short to include one of each selected character type.
+    PasswordGeneratorError: If any of the use_* parameters are not boolean.
+
+    Example:
+    >>> generate_password(16)
+    'A1b2C3d4E5f6G7h8'
+
+    >>> generate_password(12, use_special=False)
+    'A1b2C3d4E5f6'
+
+    >>> generate_password(8, use_uppercase=False, use_digits=False, use_special=False)
+    'abcdefgh'
+    """
 
     if not isinstance(length, int) or length <= 0:
         raise PasswordGeneratorError("Password length must be a positive integer.")
@@ -55,4 +83,4 @@ def generate_password(length=12, use_uppercase=True, use_lowercase=True, use_dig
 
     return ''.join(password)
 
-print(generate_password(10))
+print(generate_password(2))
