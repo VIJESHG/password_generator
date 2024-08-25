@@ -41,11 +41,11 @@ except PasswordGeneratorError as e:
 
 
 ## Parameters
-length (int): Length of the password (default is 12). Must be a positive integer.
-use_uppercase (bool): Include uppercase letters (default is True).
-use_lowercase (bool): Include lowercase letters (default is True).
-use_digits (bool): Include digits (default is True).
-use_special (bool): Include special characters (default is True).
+- length (int): Length of the password (default is 12). Must be a positive integer.
+- use_uppercase (bool): Include uppercase letters (default is True).
+- use_lowercase (bool): Include lowercase letters (default is True).
+- use_digits (bool): Include digits (default is True).
+- use_special (bool): Include special characters (default is True).
 
 
 ## Error Handling
@@ -67,5 +67,5 @@ print(generate_password(8, use_uppercase=False, use_digits=False, use_special=Fa
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request on GitHub.
 
-## Autho
+## Author
     Vijesh Ghandare - mail.vijeshg@gmail.com
